@@ -2,6 +2,7 @@ import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.event.EventHandler;
 import javafx.stage.WindowEvent;
@@ -19,6 +20,8 @@ public class SceneController
     @FXML   private Button noButton;
     @FXML   private Button exitButton;
     @FXML   private ListView listView;
+    @FXML   private Label ID_Num;
+    @FXML   private Label Item_ID;
 
     public SceneController()          // The constructor method, called first when the scene is loaded.
     {
@@ -93,6 +96,8 @@ public class SceneController
     @FXML   void listViewClicked()
     {
         Fruit selectedItem = (Fruit) listView.getSelectionModel().getSelectedItem();
+        
+        ID_Num.setText(Integer.toString(selectedItem.id));
 
         if (selectedItem == null)
         {
